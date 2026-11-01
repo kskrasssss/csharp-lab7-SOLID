@@ -18,5 +18,10 @@ while (true)
         // case
         case "0": return;
         default: Console.WriteLine("Невірний вибір"); break;
+        
+        
+        
+        case "4": Task4Demo.Run(); break;
+        
     }
 }
