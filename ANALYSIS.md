@@ -21,5 +21,5 @@
 ## Крос-рев'ю
 | Pull request | Автор | Рев'юер | Знайдені зауваження |
 |---|---|---|---|
-| feature/a-srp-ocp-lsp | Стас | Катя | https://github.com/kskrasssss/csharp-lab7-SOLID/pull/2#issuecomment-6563118019 |
-| feature/b-isp-dip | Катя | Стас | https://github.com/kskrasssss/csharp-lab7-SOLID/pull/1#issuecomment-6563105137 |
+| feature/a-srp-ocp-lsp | Стасік | Катьонка | [коментар](https://github.com/kskrasssss/csharp-lab7-SOLID/pull/2#issuecomment-6563118019) |
+    | feature/b-isp-dip | Катьонка | [коментар](https://github.com/kskrasssss/csharp-lab7-SOLID/pull/1#issuecomment-6563105137) |
