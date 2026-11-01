@@ -22,6 +22,6 @@ while (true)
         
         
         case "4": Task4Demo.Run(); break;
-        
+        case "5": Task5Demo.Run(); break;
     }
 }
