@@ -480,3 +480,5 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+utility_payments_db.csv
