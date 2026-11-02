@@ -18,6 +18,7 @@ public class UtilityBillCalculator
     public void ProcessMonthlyBill(UtilityAccountData account)
     {
         // 1. Валідація показників приладів обліку
+        // валідація
         if (string.IsNullOrWhiteSpace(account.AccountNumber))
         {
             throw new ArgumentException("Номер особового рахунку обов'язковий.");
@@ -35,7 +36,7 @@ public class UtilityBillCalculator
             throw new ArgumentException("Аномально високе споживання електроенергії. Потрібна перевірка інспектора.");
         }
 
-        // 2. Розрахунок за диференційованим тарифом та обчислення субсидії
+        // 2. Розрахунок тарифа та обчислення субсидії
         decimal cost = 0;
         if (consumptionKwh <= 100)
         {
@@ -54,7 +55,7 @@ public class UtilityBillCalculator
 
         decimal totalToPay = cost - subsidyDeduction;
 
-        // 3. Генерація офіційної платіжної квитанції
+        // 3. Платіжна квитанції
         var billInvoice = new StringBuilder();
         billInvoice.AppendLine("==================================================");
         billInvoice.AppendLine("КВИТАНЦІЯ ПРО ОПЛАТУ КОМУНАЛЬНИХ ПОСЛУГ");
@@ -68,7 +69,7 @@ public class UtilityBillCalculator
         billInvoice.AppendLine($"ДО СПЛАТИ: {totalToPay:F2} грн");
         billInvoice.AppendLine("==================================================");
 
-        // 4. Збереження у базі платіжного реєстру
+        // 4. Запис у SCV
         string logLine = $"{account.AccountNumber};{consumptionKwh};{totalToPay:F2};{DateTime.Now:yyyy-MM-dd}\n";
         File.AppendAllText("utility_payments_db.csv", logLine, Encoding.UTF8);
 
